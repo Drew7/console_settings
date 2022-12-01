@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-08-26 Wed 01:51 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как настроена моя консоль</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Grigory Bakunov">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Как настроена моя консоль</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3d0959e">1. Введение</a></li>
+<li><a href="#orgd511e3f">2. OS и управление пакетами</a>
+<ul>
+<li><a href="#org65eec9a">2.1. Linux</a></li>
+<li><a href="#org74f35c8">2.2. MacOS</a></li>
+</ul>
+</li>
+<li><a href="#orgd402e54">3. fish и fisher</a>
+<ul>
+<li><a href="#orga909020">3.1. установка в shell по-умолчанию</a></li>
+<li><a href="#org06dbd3f">3.2. fisher</a>
+<ul>
+<li><a href="#org97197c4">3.2.1. z и fzf</a></li>
+<li><a href="#org6ac0588">3.2.2. самое важное - тема</a></li>
+<li><a href="#org3aff249">3.2.3. fish-async-prompt</a></li>
+</ul>
+</li>
+<li><a href="#orgbf41024">3.3. FAQ по Fish</a></li>
+</ul>
+</li>
+<li><a href="#orgdf63931">4. Странные утилитки</a>
+<ul>
+<li><a href="#org7123fc0">4.1. magic wormhole&#xa0;&#xa0;&#xa0;<span class="tag"><span class="server">server</span>&#xa0;<span class="desktop">desktop</span></span></a></li>
+<li><a href="#org27cf954">4.2. batcat&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></a></li>
+<li><a href="#orgf7f939e">4.3. ripgrep&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span>&#xa0;<span class="server">server</span></span></a></li>
+<li><a href="#org9c0f96f">4.4. fd&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></a></li>
+<li><a href="#orgb032786">4.5. exa&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></a></li>
+<li><a href="#org4760b76">4.6. micro&#xa0;&#xa0;&#xa0;<span class="tag"><span class="server">server</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgbef7cc4">5. Emacs</a>
+<ul>
+<li><a href="#orgbf9f989">5.1. Doom это судьба</a>
+<ul>
+<li><a href="#orgf332fc1">5.1.1. настройка doom</a></li>
+</ul>
+</li>
+<li><a href="#org2744b71">5.2. любимые темы</a>
+<ul>
+<li><a href="#org6cc4e97">5.2.1. vivid-mode</a></li>
+<li><a href="#orgc7cfd00">5.2.2. flatui-theme</a></li>
+<li><a href="#org77ed235">5.2.3. nord-theme</a></li>
+</ul>
+</li>
+<li><a href="#org1ab5f01">5.3. color-identifiers-mode</a></li>
+<li><a href="#org3a2259b">5.4. awesome-tab</a></li>
+<li><a href="#org62a7503">5.5. reverse-im</a></li>
+<li><a href="#org81453f4">5.6. color-rg</a></li>
+<li><a href="#org53816b3">5.7. dashboard</a></li>
+<li><a href="#orgb8cab46">5.8. beacon</a></li>
+<li><a href="#orgadc073a">5.9. elpher</a></li>
+<li><a href="#orge7182ef">5.10. orgmode</a>
+<ul>
+<li><a href="#orgab87445">5.10.1. ox-slack</a></li>
+</ul>
+</li>
+<li><a href="#org541c81b">5.11. deft</a></li>
+<li><a href="#orgbeed01d">5.12. telega</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+У меня в последнее время стали часто спрашивать что-то вроде &ldquo;какие программы ты используешь&rdquo;. А я не знаю как ответить просто, потому что у меня все очень просто и настроено уже давно. Но давйате попробуем, тем более что вот я только что недавно настраивал заново консоль.
+</p>
+
+<div id="outline-container-org3d0959e" class="outline-2">
+<h2 id="org3d0959e"><span class="section-number-2">1</span> Введение</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+С 2018 года я начал думать, что &ldquo;идеальный личные настройки программ стремятся к нулю&rdquo;, т.е. в идеальном случае ты просто привыкаешь к дефолтным командам и настройкам, не заморачиваясь на тему дополнительных настроек. Но что делать, если некоторые настройки настолько удобны, что поднимают твою производительность и комфорт в несколько раз? Ну, можно минимизировать изменения, так чтобы настройка новой системы занимала какой-то разумный минимум времени. Так мы и поступим.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd511e3f" class="outline-2">
+<h2 id="orgd511e3f"><span class="section-number-2">2</span> OS и управление пакетами</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Так вышло, что у меня прекрасный зоопарк из машин на разных ОС, есть Windows, машины на линуксе и конечно MacOS. По счастью, благодаря WSL2, машины под управлением Windows можно перестать выделять из списка, теперь это просто запускалка для встроенного линукса.
+</p>
+</div>
+
+<div id="outline-container-org65eec9a" class="outline-3">
+<h3 id="org65eec9a"><span class="section-number-3">2.1</span> Linux</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+В качестве базового Linux я последние годы использую Ubuntu, причем не жду LTS, а живу реально на последней версии, обновляясь сразу после выхода нового дистрибутива. Для бесчеловечных экспериментов я пробую (и вам очень рекомендую) посмотроеть на <a href="https://nixos.org/">NixOS</a>, за ним стоит совсем не новая, но очень любопытная идея - создать систему, которая конфигурируется декларативно, из одного файла, да еще и версионируется так, что всегда можно откатиться на предыдущшие состояния.
+</p>
+
+<p>
+Для Ubuntu, разумеется, используется <code>apt-get</code>, а точнее уже просто <code>apt</code>, как обобщенная команда для всего что связано с пакетами. Если вы, как я, помните дебиан и apt еще вот такиииими вот (показываю где-то около колена) - обратите внимание:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fish">$ apt update
+$ apt install package-name
+$ apt remove --purge garbage
+</pre>
+</div>
+
+<p>
+и так далее. Обратите внимание, к сожалению для удобной работы на разработческой машины жизненно необходим пакет (точнее мета-пакет) <code>build-essential</code>, содержащий все необходимые пакеты для сборки приложений из исходных текстов.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-fish">$ apt install build-essential
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org74f35c8" class="outline-3">
+<h3 id="org74f35c8"><span class="section-number-3">2.2</span> MacOS</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+C MacOS все сильно проще и сложнее, потому что вам в любом случае понадобится установить инструменты Xcode и <a href="https://brew.sh/">Homebrew</a>, чаще называемый просто <code>brew</code>.
+</p>
+
+<p>
+Метод установки <code>brew</code> мне кажется очень неприятным с точки зрения безопасности, это такая стандартная теперь история &ldquo;curl страничка<sub>в</sub><sub>интернете</sub> | sh&rdquo;, т.е. запуск незвестно напрямую в сеть. Поэтому все программы, которые я ставлю таким образом, я конечно исследовал, в homebrew все нормально, но вот команда, которой рекомендуют установку на сайте меня совсем не устроила. Вот что они предлагают:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">/bin/bash -c <span style="color: #50a14f;">"</span><span style="color: #4078f2; font-weight: bold;">$(</span><span style="color: #4078f2; font-weight: bold;">curl</span><span style="color: #4078f2; font-weight: bold;"> -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)</span><span style="color: #50a14f;">"</span>
+</pre>
+</div>
+
+<p>
+То, что установка требует именно <code>bash</code> - это мелочи, в MacOS всегда он есть.
+Но вот ключи <code>curl</code> прямо раздражают:
+</p>
+
+<ul class="org-ul">
+<li>-f: молча падать когда произошла ошибка</li>
+<li>-s: молчаливый режим, не показывать прогресс-бар и сообщения об ошибке</li>
+<li>-S: но все же показывать сообщения об ошибке, если они есть</li>
+<li>-L: переходить по редиректам, если они случатся</li>
+</ul>
+
+<p>
+Мне кажется что это прямо очень неправильный набор ключей, а правильный вот такой:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #986801;">curl</span> --proto =https --tlsv1.2 https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+</pre>
+</div>
+
+<p>
+В чем разница:
+</p>
+
+<ul class="org-ul">
+<li>ошибки будут видны, как и прогресс-бар, это ничего не портит, все эти дополнительные символы попадают в <code>stderr</code></li>
+<li>я очень боюсь неявных редиректов, поэтому <code>-L</code> я сразу выкидываю</li>
+<li>два дополнительных ключа <code>--proto =https</code> и <code>--tlsv1.2</code> оставляют для curl только один протокол - http с TLS v1.2, потому что в нем нельзя так просто подменить парочку символов</li>
+</ul>
+
+<p>
+Почему я так переживаю? например потому, что скрипт внутри себя вызывает <code>sudo</code>, и мало ли что там можно от рута выполнить.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd402e54" class="outline-2">
+<h2 id="orgd402e54"><span class="section-number-2">3</span> fish и fisher</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Превое, что нам стоит сделать, это установить удобную оболочку, в которой вы будете проводить бОльшую часть времени. Я долго жил с Zsh, если вы как и я страдали от тормозов bash и zsh в сложных конфигурациях, если ждали у консоли по нескольку секунд, пока не запуститься <a href="https://ohmyz.sh/">oh-my-zsh</a> - вы меня поймете. Поэтому я перешел на <a href="https://fishshell.com/">Fish</a> - friendly interactive shell. Это современная оболочка, цветастая, супер-быстрая, встроенных средств в ней больше, чем в Zsh с сами развесистыми настройками, а старт занимает сотые доли секунды. Ну, и конечно Fish очень веселый, потому что создает немало проблем.
+</p>
+
+<p>
+Установка Fish везде одинаковая, <code>apt install fish</code> или <code>brew install fish</code>, ставьте. И сразу запускайте. Выглядит неплохо прямо из коробки, правда?
+</p>
+
+<p>
+Есть довольно много отличий, к которым вам предстоит привыкнуть - это не bash и не zsh, fish сделан с более богатым интерфейсом пользователя с самого начала.
+</p>
+
+<p>
+Прежде всего традиционные ридлайновые кнопки ввода заменены на обычные, привычные всем. Т.е. да, работают <code>home</code> и <code>end</code> для перемещения в начало и конец строки ввода. Нормально работют кнопки <code>alt+стрелочки</code> для перемещения по словам. Немного непривычна работа с историей команд, хотя если задуматься - она более логична: начните набирать команду, которую вы уже вводили, но не доходя до окончания ввода нажмите <code>вверх</code>, так вы увидите все команды, похожие на ту что вы только что ввели. Если нажать <code>alt+вверх</code> то можно дополнить текущую команду параметрами от предыдущей.
+</p>
+
+<p>
+Кстати, по мере ввода вы увидите подсказку о наиболее вероятном продолжении, классический саджест, который можно использовать нажав <code>вправо</code>. Короче все как-то более или менее интуитивно.
+</p>
+</div>
+
+<div id="outline-container-orga909020" class="outline-3">
+<h3 id="orga909020"><span class="section-number-3">3.1</span> установка в shell по-умолчанию</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+т.к. fish во многих дистрибутивах не находится в списке разрешенных оболочек, его туда надо добавить и установить его шеллом по-умолчанию
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">which fish | <span style="color: #986801;">sudo</span> tee -a /etc/shells
+chsh -s <span style="color: #4078f2; font-weight: bold;">`which fish`</span>
+</pre>
+</div>
+
+<p>
+возможно по началу вам будет комфортнее вызвать fish из вашей оболочки, просто чтобы привыкнуть к новым кейбиндам и тп.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06dbd3f" class="outline-3">
+<h3 id="org06dbd3f"><span class="section-number-3">3.2</span> fisher</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Как и для привычных шеллов, есть менеджер пакетов расширений и у fish, самый удобный называется fisher.
+</p>
+
+<p>
+Я устанавливаю его вот такой командой (да, обратите внимание, опять не как в оригинальной инструкции, я параноик)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #986801;">curl</span> --proto =https --tlsv1.2 <span style="color: #50a14f;">'https://raw.githubusercontent.com/jorgebucaran/fisher/main/fisher.fish?latest'</span>  --create-dirs -o ~/.config/fish/functions/fisher.fish
+</pre>
+</div>
+
+<p>
+и после выполнения команды у нас уже все работает.
+</p>
+
+<p>
+Что я устанавливаю в первую чередь:
+</p>
+</div>
+<div id="outline-container-org97197c4" class="outline-4">
+<h4 id="org97197c4"><span class="section-number-4">3.2.1</span> z и fzf</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Это две важнейших утилиты, которые позволяют мне делать все мои рутинные операции в 500 тысяч раз быстрее.
+</p>
+
+<p>
+<code>fisher add jethrokuan/z</code> - установит z, команду свер-быстрого перехода в дальние директории. Например если я когда-то уже переходил в каталог <code>/var/spool/postfix/incoming</code>, то достаточно будет команды <code>z inc</code> для перехода в эту директорию и работы в ней.
+</p>
+
+<p>
+Если вы еще не знаете что такое <code>fzf</code> срочно гуглите - это коносольный инструмент для нечеткого поиска, который я супер-активно теперь применяю везде. Установите его (он есть и в убунту и для хоумбрю) и опробуйте, это самостоятельная команда. Для теста напишите чтонибудь вроде <code>find . | fzf</code> и понажимайте буквы - вы все поймете.
+</p>
+
+<p>
+Для fish есть удобный модуль, который встраивает fzf в поиск команд и истории, ставится он командой <code>fisher add jethrokuan/fzf</code>. После установки этого пакета вы сможете наконец-то воспользоваться любимой кнопочкой <code>ctrl+r</code> для поиска по истории команд, а так же очень удобной <code>ctrl+t</code> для быстрой навигации по файлам в текущей директории.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6ac0588" class="outline-4">
+<h4 id="org6ac0588"><span class="section-number-4">3.2.2</span> самое важное - тема</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Все мы любим покрасивее, но вкусы у всех разные. Я могу порекомендовать вам две классные темы: <a href="https://github.com/reujab/silver">silver</a> и <a href="https://starship.rs/">starship</a>. Обе легко используются и написаны не на шелле, что резко увеличивает их производительность :) Но если вам хочется классического подхода - я бы посоветовал Рыбку Боба, ставится он так <code>fisher add oh-my-fish/theme-bobthefish</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3aff249" class="outline-4">
+<h4 id="org3aff249"><span class="section-number-4">3.2.3</span> fish-async-prompt</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+Одно из самых странных - асинхронность строки ввода
+Этот модуль делает так, что функции, рисующие строку ввода и все рюшечки к нему работают в отдельном процессе, асинхронно, т.е. вообще никак не тормозят начало работы с командной строкой. Есть у этого свои спецэффекты но попробовать это можно так: <code>fisher add acomagu/fish-async-prompt</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbf41024" class="outline-3">
+<h3 id="orgbf41024"><span class="section-number-3">3.3</span> FAQ по Fish</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Вот самые часты ответы, которые мне приходится давать. В порядке убывания частоты
+</p>
+
+<ul class="org-ul">
+<li>Файлы настроек fish и fisher находятся в ~/.config/fish, разберетесь</li>
+<li>правильный способ поменять <code>$PATH</code> выглядит так:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #a626a4;">set</span> -U fish_user_paths $<span style="color: #6a1868;">HOME</span>/.local/bin $<span style="color: #6a1868;">fish_user_paths</span>
+</pre>
+</div>
+<p>
+эту команду надо просто выполнить в открытом шелле. Все, отдельно ничего никуда записывать не надо.
+</p>
+<ul class="org-ul">
+<li>fish умеет сам сохранять и загружать созданные вами алиасы и функции. Для этого надо в шелле сказать просто funcsave</li>
+<li>Да, синтаксис fish отличается от привычного вам bash, но можно совместить, самый простой способ - установить модуль bass <code>fisher add edc/bass</code> и выполнять команды так:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ bass <span style="color: #50a14f;">'for x in 1 2 3; do </span><span style="color: #50a14f;">echo</span><span style="color: #50a14f;"> $x; done'</span>
+<span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #da8548; font-weight: bold;">2</span>
+<span style="color: #da8548; font-weight: bold;">3</span>
+$ bass export <span style="color: #6a1868;">RES</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+$ <span style="color: #986801;">echo</span> $<span style="color: #6a1868;">RES</span>
+<span style="color: #da8548; font-weight: bold;">1</span>
+</pre>
+</div>
+
+<p>
+т.е. по сути вы можете использовать ваш любимый bash. Хотя не очень понятно, зачем тогда вы вместе со мной на fish смотрите :)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf63931" class="outline-2">
+<h2 id="orgdf63931"><span class="section-number-2">4</span> Странные утилитки</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+У меня в консоли какая-то неприличная пачка привычных утилит, которые раскатаны на всех моих личных машинах и серверах. Привыкать к ним легко, отвыкнуть сложно, часть требует эзотерической установки. Поэтому я их протегал как мог, по тегам кажется будет понятно что можно установить везде
+</p>
+</div>
+
+<div id="outline-container-org7123fc0" class="outline-3">
+<h3 id="org7123fc0"><span class="section-number-3">4.1</span> magic wormhole&#xa0;&#xa0;&#xa0;<span class="tag"><span class="server">server</span>&#xa0;<span class="desktop">desktop</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Одна из важных находок в моей жизни - <a href="https://magic-wormhole.readthedocs.io/">magic wormhole</a>. Это утилита, которая установлена на каждом моем компьютере и позволяет без проблем перекидывать любые файлы любого размера без каких-то промежуточных серверов (ну ладно, в реальности промежуточные сервера есть, но нужны они скорее для дискавери).
+</p>
+
+<p>
+Устанавливается практически в любую OS, называется везде одинаково <code>magic-wormhole</code> и работает так:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">$ wormhole send mm.txt
+Sending <span style="color: #da8548; font-weight: bold;">638.7</span> kB file named <span style="color: #50a14f;">'mm.txt'</span>
+Wormhole code is: 5-disable-dupont
+On the other computer, please run:
+
+wormhole receive 5-disable-dupont
+</pre>
+</div>
+
+<p>
+а на другом компьютере вы реально выполняете именно это
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">$ wormhole receive 5-disable-dupont
+Receiving file <span style="color: #4078f2;">(</span><span style="color: #da8548; font-weight: bold;">638.7</span> kB<span style="color: #4078f2;">)</span> into: mm.txt
+ok? <span style="color: #4078f2;">(</span>Y/n<span style="color: #4078f2;">)</span>: Y
+<span style="color: #a626a4;">Receiving</span> <span style="color: #4078f2;">(</span>-&gt;tcp:172.29.62.108:56661<span style="color: #4078f2;">)</span>..
+100%|&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;| 639k/639k <span style="color: #4078f2;">[</span>00:00&lt;00:00, 3.25MB/s<span style="color: #4078f2;">]</span>
+Received file written to mm.txt
+</pre>
+</div>
+
+<p>
+При этом wormhole умеет передавать и целые каталоги, есть специальный режим для пересылки публичных ключей ssh, а так же <i>мощный эпиай</i>. Пока нехтвает только одного - мобильной версии, чтобы на iOS можно было работать. Если вам (как и мне) нужен был инструмент для передачи файлов между серверами, вашими или чужими, <code>wormhole</code> это прямо оно.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27cf954" class="outline-3">
+<h3 id="org27cf954"><span class="section-number-3">4.2</span> batcat&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></h3>
+</div>
+<div id="outline-container-orgf7f939e" class="outline-3">
+<h3 id="orgf7f939e"><span class="section-number-3">4.3</span> ripgrep&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span>&#xa0;<span class="server">server</span></span></h3>
+</div>
+<div id="outline-container-org9c0f96f" class="outline-3">
+<h3 id="org9c0f96f"><span class="section-number-3">4.4</span> fd&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></h3>
+</div>
+<div id="outline-container-orgb032786" class="outline-3">
+<h3 id="orgb032786"><span class="section-number-3">4.5</span> exa&#xa0;&#xa0;&#xa0;<span class="tag"><span class="desktop">desktop</span></span></h3>
+</div>
+<div id="outline-container-org4760b76" class="outline-3">
+<h3 id="org4760b76"><span class="section-number-3">4.6</span> micro&#xa0;&#xa0;&#xa0;<span class="tag"><span class="server">server</span></span></h3>
+</div>
+</div>
+<div id="outline-container-orgbef7cc4" class="outline-2">
+<h2 id="orgbef7cc4"><span class="section-number-2">5</span> Emacs</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgbf9f989" class="outline-3">
+<h3 id="orgbf9f989"><span class="section-number-3">5.1</span> Doom это судьба</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgf332fc1" class="outline-4">
+<h4 id="orgf332fc1"><span class="section-number-4">5.1.1</span> настройка doom</h4>
+</div>
+</div>
+<div id="outline-container-org2744b71" class="outline-3">
+<h3 id="org2744b71"><span class="section-number-3">5.2</span> любимые темы</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org6cc4e97" class="outline-4">
+<h4 id="org6cc4e97"><span class="section-number-4">5.2.1</span> vivid-mode</h4>
+</div>
+<div id="outline-container-orgc7cfd00" class="outline-4">
+<h4 id="orgc7cfd00"><span class="section-number-4">5.2.2</span> flatui-theme</h4>
+</div>
+<div id="outline-container-org77ed235" class="outline-4">
+<h4 id="org77ed235"><span class="section-number-4">5.2.3</span> nord-theme</h4>
+</div>
+</div>
+<div id="outline-container-org1ab5f01" class="outline-3">
+<h3 id="org1ab5f01"><span class="section-number-3">5.3</span> color-identifiers-mode</h3>
+</div>
+<div id="outline-container-org3a2259b" class="outline-3">
+<h3 id="org3a2259b"><span class="section-number-3">5.4</span> awesome-tab</h3>
+</div>
+<div id="outline-container-org62a7503" class="outline-3">
+<h3 id="org62a7503"><span class="section-number-3">5.5</span> reverse-im</h3>
+</div>
+<div id="outline-container-org81453f4" class="outline-3">
+<h3 id="org81453f4"><span class="section-number-3">5.6</span> color-rg</h3>
+</div>
+<div id="outline-container-org53816b3" class="outline-3">
+<h3 id="org53816b3"><span class="section-number-3">5.7</span> dashboard</h3>
+</div>
+<div id="outline-container-orgb8cab46" class="outline-3">
+<h3 id="orgb8cab46"><span class="section-number-3">5.8</span> beacon</h3>
+</div>
+<div id="outline-container-orgadc073a" class="outline-3">
+<h3 id="orgadc073a"><span class="section-number-3">5.9</span> elpher</h3>
+</div>
+<div id="outline-container-orge7182ef" class="outline-3">
+<h3 id="orge7182ef"><span class="section-number-3">5.10</span> orgmode</h3>
+<div class="outline-text-3" id="text-5-10">
+</div>
+<div id="outline-container-orgab87445" class="outline-4">
+<h4 id="orgab87445"><span class="section-number-4">5.10.1</span> ox-slack</h4>
+</div>
+</div>
+<div id="outline-container-org541c81b" class="outline-3">
+<h3 id="org541c81b"><span class="section-number-3">5.11</span> deft</h3>
+</div>
+<div id="outline-container-orgbeed01d" class="outline-3">
+<h3 id="orgbeed01d"><span class="section-number-3">5.12</span> telega</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Grigory Bakunov</p>
+<p class="date">Created: 2020-08-26 Wed 01:51</p>
+</div>
+</body>
+</html>
